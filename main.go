@@ -61,12 +61,6 @@ func main() {
 		config.Business.SerifFont = serifFont
 	}
 
-	err = checkImageFile(config)
-	if err != nil {
-		println(err.Error())
-		os.Exit(1)
-	}
-
 	bill := invoice.NewBill(config)
 
 	err = bill.RenderToFile()
